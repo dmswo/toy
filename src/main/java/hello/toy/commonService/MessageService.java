@@ -1,20 +1,19 @@
 package hello.toy.commonService;
 
-import lombok.Value;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
 import org.json.simple.JSONObject;
-
+import org.springframework.beans.factory.annotation.Value;
 import java.util.HashMap;
 
 public class MessageService {
-    //@Value("${coolsms.devHee.apikey}")
+    @Value("${coolsms.devHee.apikey}")
     private String apiKey;
 
-    //@Value("${coolsms.devHee.apisecret}")
+    @Value("${coolsms.devHee.apisecret}")
     private String apiSecret;
 
-    //@Value("${coolsms.devHee.fromnumber}")
+    @Value("${coolsms.devHee.fromnumber}")
     private String fromNumber;
 
     public void sendMessage(String toNumber, String randomNumber) {
